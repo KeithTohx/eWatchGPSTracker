@@ -98,8 +98,10 @@ function initMap() {
             var timestamp = dataObj.data[i].timestamp;
             var longitude = dataObj.data[i].longitude; 
             var latitude = dataObj.data[i].latitude;
+            var imei = dataObj.data[i].imei;
+            var battery = dataObj.data[i].battery;
 
-            $("#data").append('<p>' + timestamp + ' ' + longitude + ' ' + latitude + '</p>')
+            $("#data").append('<p>' + timestamp + ', ' + longitude + ', ' + latitude + ', ' + imei + ', ' + battery + '</p>')
 
             // marker info window content 
             var contentString =
@@ -107,10 +109,13 @@ function initMap() {
             <div id="siteNotice">
             </div>
             <div id="bodyContent">
-            <p><b>Location</b></p>
-            <p style='font-size: 14px;'>Time Stamp: ${timestamp}</p>
-            <p style='font-size: 14px;'>Longitude: ${longitude}</p>
-            <p style='font-size: 14px;'>Latitude: ${latitude}</p>
+            <p style='margin-top: 1rem;'>
+            Timestamp: ${timestamp} <br>
+            Longitude: ${longitude} <br>
+            Latitude: ${latitude} <br>
+            IMEI: ${imei} <br>
+            Battery Level: ${battery}%
+            </p>
             </div>
             </div>`;
 
