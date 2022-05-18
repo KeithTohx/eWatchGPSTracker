@@ -126,7 +126,7 @@ function initMap() {
         });
 
         // get user input from dropdown list
-        $("#submit").on('click', function () {
+        $("#submitBtn").on('click', function () {
             var selectedDate = $("#selectDate").find("option:selected").text();
             deleteMarkers()
             $("#data").html(" ");
@@ -134,6 +134,12 @@ function initMap() {
             {
                 getDatafromDate(selectedDate);
             }
+        });
+
+        // remove marker on map and text below map
+        $("#clearBtn").on('click', function () {
+            deleteMarkers()
+            $("#data").html(" ");
         });
 
         function getDatafromDate(selectedDate)
