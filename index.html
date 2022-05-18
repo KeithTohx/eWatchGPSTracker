@@ -13,14 +13,23 @@
         <a id="top"></a>
         <div class="container">
             <p><b>eWatch GPS Tracker</b></p>
-            <div id="data"></div>
+            <div>
+                <div style="padding-bottom: 10px;">
+                    Select a Date: 
+                    <select id="selectDate">
+                        <option selected="selected" value="0">~</option>
+                    </select>
+                    <button id="submit">Submit</button>
+                </div>
+            </div>
             <div id="map"></div> <!-- where map will display -->
+            <div id="data"></div> <!-- where text details display -->
         </div>
 
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="script.js"></script>
+        <script src="scriptV0_2.js"></script>
 
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAs-kdfEO9r-dGNu1dpZc-imYYIZYbiLZM&callback=initMap"
         async defer></script>
