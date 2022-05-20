@@ -16,15 +16,27 @@
             <div>
                 <div style="padding-bottom: 10px;">
                     Select a Date: 
-                    <select id="selectDate">
-                        <option selected="selected" value="0">~</option>
-                    </select>
+                    <select id="selectDate"></select>
                     <button id="submitBtn">Submit</button>
                     <button id="clearBtn">Clear</button>
                 </div>
             </div>
             <div id="map"></div> <!-- where map will display -->
-            <div id="data"></div> <!-- where text details display -->
+            <div id="data"></div> 
+            <div style="padding-top: 10px; padding-bottom: 10px;">
+                <table id="table" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th>Timestamp</th>
+                            <th>Longitude</th>
+                            <th>Latitude</th>
+                            <th>IMEI</th>
+                            <th>Battery Level</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableData"></tbody>
+                </table>
+            </div>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

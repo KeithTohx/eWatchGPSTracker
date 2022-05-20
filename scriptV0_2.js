@@ -129,17 +129,14 @@ function initMap() {
         $("#submitBtn").on('click', function () {
             var selectedDate = $("#selectDate").find("option:selected").text();
             deleteMarkers()
-            $("#data").html(" ");
-            if (selectedDate != "~")
-            {
-                getDatafromDate(selectedDate);
-            }
+            $("table tbody tr").remove();
+            getDatafromDate(selectedDate);
         });
 
         // remove marker on map and text below map
         $("#clearBtn").on('click', function () {
             deleteMarkers()
-            $("#data").html(" ");
+            $("table tbody tr").remove();
         });
 
         function getDatafromDate(selectedDate)
@@ -157,7 +154,13 @@ function initMap() {
                     var imei = dataObj.data[i].imei;
                     var battery = dataObj.data[i].battery;
 
-                    $("#data").append(`<p>${timestamp}, ${longitude}, ${latitude}, ${imei}, ${battery}</p>`)
+                    $("#tableData").append(`<tr>
+                                            <td>${timestamp}</td>
+                                            <td>${longitude}</td>
+                                            <td>${latitude}</td>
+                                            <td>${imei}</td>
+                                            <td>${battery}</td>
+                                            </tr>`)
 
                     // marker info window content 
                     var contentString =
@@ -170,7 +173,7 @@ function initMap() {
                     Longitude: ${longitude} <br>
                     Latitude: ${latitude} <br>
                     IMEI: ${imei} <br>
-                    Battery Level: ${battery}%
+                    Battery Level: ${battery}
                     </p>
                     </div>
                     </div>`;

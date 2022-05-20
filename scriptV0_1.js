@@ -101,7 +101,7 @@ function initMap() {
             var imei = dataObj.data[i].imei;
             var battery = dataObj.data[i].battery;
 
-            $("#data").append('<p>' + timestamp + ', ' + longitude + ', ' + latitude + ', ' + imei + ', ' + battery + '</p>')
+            $("#data").append(`<p>${timestamp}, ${longitude}, ${latitude}, ${imei}, ${battery}</p>`)
 
             // marker info window content 
             var contentString =
